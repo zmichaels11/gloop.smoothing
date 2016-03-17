@@ -241,7 +241,7 @@ public class Easings {
      * @since 15.07.24
      */
     public static <VecT extends GLVecD> VecT linear(double t, VecT s, VecT c, double d) {
-        return (VecT) c.scale(t /= d).plus(s.plus(c));
+        return (VecT) s.scale((1.0 - t / d)).plus(s.plus(c).scale(t / d));
     }
 
     /**
